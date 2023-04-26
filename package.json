@@ -1,0 +1,25 @@
+{
+  "name": "scentbird_tech_task",
+  "version": "1.0.0",
+  "description": "tech_task",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KateThere/scentbird_tech_task.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KateThere/scentbird_tech_task/issues"
+  },
+  "homepage": "https://github.com/KateThere/scentbird_tech_task#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.32.3",
+    "@typescript-eslint/eslint-plugin": "^5.59.1",
+    "@typescript-eslint/parser": "^5.59.1",
+    "eslint": "^8.39.0",
+    "playwright": "^1.32.3",
+    "typescript": "^5.0.4"
+  }
+}
