@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { test } from "@playwright/test";
 import { SubscriptionPage } from "../../modules/subscriptionPage";
 let subscriptionPage: SubscriptionPage;
