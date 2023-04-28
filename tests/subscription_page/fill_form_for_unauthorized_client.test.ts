@@ -12,26 +12,30 @@ test.beforeEach(async ({ page }) => {
   await subscriptionPage.navigate();
 });
 
-test("Fill form with options: cologne, send right now, required fields only", async () => {
+test("Fill form with options: cologne, send later, required fields only", async () => {
   await subscriptionPage.chooseCologneOption();
   await subscriptionPage.fillRecipientNameField(clientName);
   await subscriptionPage.fillRecipientEmailField(clientEmail);
-  await subscriptionPage.chooseSendNowOption();
+  await subscriptionPage.chooseSendLaterOption();
   await subscriptionPage.goToCart();
   await subscriptionPage.checkCartIsOpen();
+  await subscriptionPage.checkOrderedGiftSubscriptionIsVisibleInCart();
+  await subscriptionPage.checkGiftSubscriptionOfferIsVisibleInCart();
   await subscriptionPage.goToCheckout();
   await subscriptionPage.checkRedirectToRegisterPage();
 });
 
-test("Fill form with options: perfume, send later, all fields", async () => {
+test("Fill form with options: perfume, send right now, all fields", async () => {
   await subscriptionPage.choosePerfumeOption();
   await subscriptionPage.fillRecipientNameField(clientName);
   await subscriptionPage.fillRecipientEmailField(clientEmail);
   await subscriptionPage.fillMessageField(messageText);
   await subscriptionPage.fillSenderNameField(senderName);
-  await subscriptionPage.chooseSendLaterOption();
+  await subscriptionPage.chooseSendNowOption();
   await subscriptionPage.goToCart();
   await subscriptionPage.checkCartIsOpen();
+  await subscriptionPage.checkOrderedGiftSubscriptionIsVisibleInCart();
+  await subscriptionPage.checkGiftSubscriptionOfferIsVisibleInCart();
   await subscriptionPage.goToCheckout();
   await subscriptionPage.checkRedirectToRegisterPage();
 });

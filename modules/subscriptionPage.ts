@@ -16,6 +16,8 @@ export class SubscriptionPage {
   readonly checkoutBtn: Locator;
   readonly recipientNameError: Locator;
   readonly recipientEmailError: Locator;
+  readonly orderedGiftSubscriptionItem: Locator;
+  readonly giftSubscriptionOfferBanner: Locator;
 
   constructor(page: Page) {
     this.page = page;
@@ -32,6 +34,8 @@ export class SubscriptionPage {
     this.checkoutBtn = page.getByTestId("modalPrimaryButton");
     this.recipientNameError = page.getByTestId("recipientNameError");
     this.recipientEmailError = page.getByTestId("recipientEmailError");
+    this.orderedGiftSubscriptionItem = page.getByTestId("orderGiftSubscription");
+    this.giftSubscriptionOfferBanner = page.getByTestId("giftSubscriptionOfferBannerItem");
   }
 
   /**
@@ -149,4 +153,18 @@ export class SubscriptionPage {
   async checkRecipientEmailError() {
     await expect(this.recipientEmailError).toBeVisible();
   }
+
+  /**
+   * check ordered gift subscribtion is visible in cart
+   */
+     async checkOrderedGiftSubscriptionIsVisibleInCart() {
+      await expect(this.orderedGiftSubscriptionItem).toBeVisible();
+    }
+
+  /**
+   * check gift subscribtion offer is visible in cart
+   */
+      async checkGiftSubscriptionOfferIsVisibleInCart() {
+      await expect(this.giftSubscriptionOfferBanner).toBeVisible();
+    }
 }
